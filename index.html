@@ -380,7 +380,39 @@
         </div>
 
     </main>
+    <section class="py-20 px-4 max-w-lg mx-auto text-white">
+  <div class="bg-zinc-900/80 backdrop-blur-md p-8 rounded-2xl border border-zinc-800 shadow-2xl">
+    <h2 class="text-3xl font-extrabold mb-2 text-center bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+      Оставить заявку
+    </h2>
+    <p class="text-zinc-400 text-sm text-center mb-6">Заполни форму, и бот моментально перешлет её мне в Telegram</p>
 
+    <form id="telegram-form" class="space-y-4">
+      <div>
+        <label class="block text-zinc-400 text-xs uppercase tracking-wider mb-2" for="name">Ваше имя</label>
+        <input type="text" id="name" required placeholder="Иван" 
+               class="w-full p-3 rounded-lg bg-zinc-800/50 border border-zinc-700 text-white placeholder-zinc-500 focus:outline-none focus:border-purple-500 transition-colors">
+      </div>
+      <div>
+        <label class="block text-zinc-400 text-xs uppercase tracking-wider mb-2" for="contact">Telegram или Телефон</label>
+        <input type="text" id="contact" required placeholder="@username или +7..." 
+               class="w-full p-3 rounded-lg bg-zinc-800/50 border border-zinc-700 text-white placeholder-zinc-500 focus:outline-none focus:border-purple-500 transition-colors">
+      </div>
+      <div>
+        <label class="block text-zinc-400 text-xs uppercase tracking-wider mb-2" for="message">Сообщение</label>
+        <textarea id="message" rows="3" placeholder="Расскажите о вашем проекте..." 
+                  class="w-full p-3 rounded-lg bg-zinc-800/50 border border-zinc-700 text-white placeholder-zinc-500 focus:outline-none focus:border-purple-500 transition-colors"></textarea>
+      </div>
+      
+      <button type="submit" 
+              class="w-full py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold rounded-lg transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-purple-500/20">
+        Отправить в космос 🚀
+      </button>
+
+      <p id="form-status" class="text-center text-sm font-semibold mt-4 hidden"></p>
+    </form>
+  </div>
+</section>
     <footer class="bg-[#121212] text-white rounded-t-[40px] mt-32 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             
@@ -622,6 +654,46 @@
 
         });
     </script>
-    
+    <script>
+  const form = document.getElementById('telegram-form');
+  const statusText = document.getElementById('form-status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Сбрасываем статус перед отправкой
+    statusText.classList.remove('hidden', 'text-red-400', 'text-green-400');
+    statusText.classList.add('text-zinc-400');
+    statusText.textContent = 'Отправка заявки...';
+
+    const name = document.getElementById('name').value;
+    const contact = document.getElementById('contact').value;
+    const message = document.getElementById('message').value;
+
+    try {
+      // Делаем безопасный запрос к нашей внутренней API Vercel
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, contact, message }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        statusText.textContent = '🎉 Заявка улетела! Скоро свяжусь с вами.';
+        statusText.className = 'text-center text-sm font-semibold mt-4 text-green-400';
+        form.reset();
+      } else {
+        throw new Error(result.message || 'Ошибка отправки');
+      }
+    } catch (error) {
+      statusText.textContent = '❌ Не удалось отправить. Попробуйте еще раз.';
+      statusText.className = 'text-center text-sm font-semibold mt-4 text-red-400';
+    }
+  });
+</script>
 </body>
 </html>
