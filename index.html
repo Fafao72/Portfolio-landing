@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brush&Studio — Design Creators</title>
+    
+    <!-- Подключаем Tailwind CSS для быстрой стилизации -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Подключаем наш внешний файл стилей -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Иконки Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-white text-[#121212] antialiased selection:bg-[#121212] selection:text-white">
+
+    <!-- ГЛАВНЫЙ ЭКРАН (HERO SECTION) -->
+    <header class="relative w-full h-[85vh] md:h-[95vh] bg-cover bg-center rounded-b-[40px] md:rounded-b-[60px] overflow-hidden" 
+            style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.85) 100%), url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1920&q=80');">
+        
+        <!-- Сетка звезд на фоне -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-black/20 to-black/60 pointer-events-none"></div>
+
+        <!-- Навигация -->
+        <div class="relative z-10 max-w-7xl mx-auto px-6 py-6 md:py-8 flex items-center justify-between">
+            <!-- Логотип -->
+            <a href="#" class="text-white font-extrabold text-xl md:text-2xl tracking-tight hover:opacity-90 transition-opacity">
+                Brush<span class="text-gray-300 font-light">&</span>Studio
+            </a>
+
+            <!-- Меню -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="#" class="text-white hover:text-gray-300 transition-colors">Portfolio</a>
+                <a href="#" class="text-white/80 hover:text-white transition-colors">Team</a>
+                <a href="#" class="text-white/80 hover:text-white transition-colors">About</a>
+                <a href="#" class="text-white/80 hover:text-white transition-colors">Blog</a>
+                <a href="#" class="text-white/80 hover:text-white transition-colors">Contact</a>
+            </nav>
+
+            <!-- Поиск -->
+            <div class="flex items-center space-x-4 text-white">
+                <button class="hover:text-gray-300 transition-colors" aria-label="Поиск">
+                    <i data-lucide="search" class="w-5 h-5"></i>
+                </button>
+                <button class="md:hidden hover:text-gray-300 transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Контент Главного Экрана -->
+        <div class="relative z-10 max-w-7xl mx-auto h-[calc(100%-88px)] flex flex-col md:flex-row items-center justify-between px-6 pb-12 gap-8 md:gap-12 w-full">
+ 
+
+            <div class="relative z-10 max-w-3xl">
+                <!-- Заголовок -->
+                <h1 class="text-white text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] max-w-2xl">
+                    We are the best design creators
+                </h1>
+
+                <!-- Описание -->
+                <p class="mt-6 text-gray-300 text-base md:text-lg max-w-md font-light leading-relaxed">
+                    Creative group for complex brand development and beautiful, functional interface design.
+                </p>
+
+                <!-- Кнопка -->
+                <div class="mt-10">
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-3.5 bg-white text-black font-semibold rounded-full hover:bg-gray-100 active:scale-95 transition-all duration-200 shadow-lg hover:shadow-xl">
+                        Order
+                    </a>
+                </div>
+            </div>
+                       <!-- Вращающаяся сфера-планета -->
+            <div class="hidden md:flex w-80 h-80 lg:w-[400px] lg:h-[400px] shrink-0 relative items-center justify-center">
+             <div class="w-full h-full rounded-full bg-cover bg-center opacity-90 animate-[spin_180s_linear_infinite]"
+                 style="background-image: url('https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?auto=format&fit=crop&w=1000&q=90');
+                -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 41%, rgba(0,0,0,0) 46%);
+                mask-image: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 41%, rgba(0,0,0,0) 46%);">
+             </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- СЕКЦИЯ 2: СТАТИСТИКА И ОПИСАНИЕ -->
+    <main class="max-w-7xl mx-auto px-6 py-20 md:py-32">
+        
+        <!-- Сетка: Числа слева, Текст справа -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+            
+            <!-- Левая колонка: Цифры -->
+            <div class="lg:col-span-5 space-y-10 md:space-y-12">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-[#121212]">15,000</h2>
+                    <p class="text-sm font-medium text-gray-400 mt-1 uppercase tracking-wider">Completed works</p>
+                </div>
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-[#121212]">10,000</h2>
+                    <p class="text-sm font-medium text-gray-400 mt-1 uppercase tracking-wider">Prototypes</p>
+                </div>
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-[#121212]">278</h2>
+                    <p class="text-sm font-medium text-gray-400 mt-1 uppercase tracking-wider">Creators</p>
+                </div>
+            </div>
+
+            <!-- Правая колонка: Манифест -->
+            <div class="lg:col-span-7 space-y-6 md:space-y-8">
+                <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.2] text-[#121212] tracking-tight">
+                    We use proven design methods, to create a personal approach to each product. This allows you to achieve high results and quality completed work.
+                </h3>
+                
+                <div class="space-y-4 text-gray-500 font-light text-sm sm:text-base leading-relaxed max-w-xl">
+                    <p>
+                        Motivated. We help companies define their brand identity, start up their operations visually with clear purpose, proposition and identity.
+                    </p>
+                    <p>
+                        Effectively communicate with web environments visually. In collaboration with our strategic team, our digital branding designs develop brand assets for a cohesive, user-centric experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+<!-- СЕКЦИЯ 3: ИНТЕРАКТИВНОЕ ВИДЕО -->
+        <div class="mt-20 md:mt-28">
+            <!-- Убрали hover:scale-[1.01] и transition-transform — теперь рамка абсолютно статична -->
+            <div class="group relative w-full h-[250px] sm:h-[380px] md:h-[500px] bg-[#0c0c0c] rounded-[24px] md:rounded-[36px] overflow-hidden flex items-center justify-center cursor-pointer shadow-2xl">
+                
+                <!-- Паттерн точек из style.css -->
+                <div class="absolute inset-0 dots-pattern opacity-40"></div>
+                
+                <!-- Декоративные элементы в стиле Figma -->
+                <div class="absolute top-[15%] left-[10%] text-white/10 font-mono text-xs select-none tracking-widest hidden sm:block">
+                    ▲ ▲ ▲ ▲ ▲ ▲
+                </div>
+                <div class="absolute bottom-[15%] right-[10%] text-white/10 font-mono text-xs select-none tracking-widest hidden sm:block">
+                    ▲ ▲ ▲ ▲ ▲ ▲
+                </div>
+                <div class="absolute top-[20%] right-[15%] text-white/5 text-3xl font-light select-none hidden md:block">✕</div>
+                <div class="absolute bottom-[20%] left-[15%] text-white/5 text-4xl font-light select-none hidden md:block">＋</div>
+
+                <!-- Кнопка PLAY (увеличивается только она за счет group-hover:scale-110) -->
+                <div class="relative z-10 flex flex-col items-center space-y-4">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-white text-black rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-gray-100 group-hover:shadow-2xl">
+                        <i data-lucide="play" class="w-6 h-6 sm:w-8 sm:h-8 fill-black translate-x-[2px]"></i>
+                    </div>
+                </div>
+
+                <!-- Мягкое свечение при наведении (тоже плавно загорается внутри статичной рамки) -->
+                <div class="absolute w-48 h-48 bg-white/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            </div>
+        </div>
+        
+<!-- СЕКЦИЯ 4: НАШИ НАПРАВЛЕНИЯ (ЧИСТЫЙ ДИЗАЙН 50/50) -->
+        <div class="mt-24 md:mt-36 space-y-20 md:space-y-32">
+            
+            <!-- Ряд 1: 3D Design -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Левая колонка: Текст -->
+                <div class="space-y-6 order-first">
+                    <h3 class="text-3xl md:text-4xl font-extrabold text-[#121212] tracking-tight">3D Design</h3>
+                    <p class="text-gray-500 font-light text-base leading-relaxed max-w-md">
+                        3D design is a digital art that is used to create a digital model of any object or environment in 3D. Project visual concepts, motion graphics and character models.
+                    </p>
+                    <div class="pt-2">
+                        <a href="#" class="inline-flex items-center justify-center px-8 py-3 bg-[#121212] text-white text-sm font-semibold rounded-full hover:bg-black active:scale-95 transition-all duration-200">
+                            More
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Правая колонка: Картинка на нежно-голубом фоне -->
+                <div class="aspect-[16/10] bg-[#d9e5f0] rounded-[32px] overflow-hidden flex items-center justify-center p-6 sm:p-10 transition-transform duration-500 hover:scale-[1.01]">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" 
+                         alt="3D Robotic Hand" 
+                         class="w-full h-full object-cover rounded-[20px] shadow-sm">
+                </div>
+            </div>
+
+            <!-- Ряд 2: Illustration -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Левая колонка: Картинка на нежно-сиреневом фоне (на десктопе идет первой) -->
+                <!-- order-last lg:order-first управляет тем, чтобы на мобилках текст шел сверху, а картинка снизу -->
+                <div class="order-last lg:order-first aspect-[16/10] bg-[#e1e2f4] rounded-[32px] overflow-hidden flex items-center justify-center p-6 sm:p-10 transition-transform duration-500 hover:scale-[1.01]">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=800&q=80" 
+                         alt="Illustration" 
+                         class="w-full h-full object-cover rounded-[20px] shadow-sm">
+                </div>
+
+                <!-- Правая колонка: Текст -->
+                <div class="space-y-6">
+                    <h3 class="text-3xl md:text-4xl font-extrabold text-[#121212] tracking-tight">Illustration</h3>
+                    <p class="text-gray-500 font-light text-base leading-relaxed max-w-md">
+                        Illustration is a decoration, interpretation or visual explanation of a text, concept or process. Integration to user experience, brand identity, and customized print design.
+                    </p>
+                    <div class="pt-2">
+                        <a href="#" class="inline-flex items-center justify-center px-8 py-3 bg-[#121212] text-white text-sm font-semibold rounded-full hover:bg-black active:scale-95 transition-all duration-200">
+                            More
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+<!-- СЕКЦИЯ 5: ЦИТАТА (QUOTE) -->
+        <div class="mt-24 md:mt-36 max-w-4xl">
+            <p class="text-xs font-bold uppercase tracking-widest text-gray-400">Quote</p>
+            <blockquote class="mt-6 md:mt-8">
+                <p class="text-xl sm:text-2xl md:text-[32px] font-bold text-[#121212] leading-[1.35] tracking-tight">
+                    "Fast, cheap and good - of these three things you should always choose two. If it's fast and cheap, it will never be good. If it's cheap and good, it will never be fast. And if it is good and fast, it will never come out cheap. But remember: out of three you will still have to always choose two."
+                </p>
+                <!-- Автор цитаты -->
+                <cite class="block mt-6 md:mt-8 not-italic text-sm font-medium">
+                    <span class="text-[#121212] font-bold">Alex Lee</span> 
+                    <span class="text-gray-300 mx-2">/</span> 
+                    <span class="text-gray-400">Co-founder of C3</span>
+                </cite>
+            </blockquote>
+        </div>
+
+
+        <!-- СЕКЦИЯ 6: ИНТЕРАКТИВНЫЙ НЕОНОВЫЙ СЛАЙДЕР (PORTFOLIO SLIDER) -->
+        <div class="mt-24 md:mt-36">
+            <!-- Главный контейнер слайдера -->
+            <!-- group при наведении будет плавно показывать скрытые стрелки управления -->
+            <div class="relative w-full h-[350px] sm:h-[450px] md:h-[550px] rounded-[32px] overflow-hidden shadow-2xl group bg-neutral-900">
+                
+                <!-- Лента слайдера (двигается за счет JS) -->
+                <div id="slider-track" class="flex w-full h-full">
+                    
+                    <!-- Слайд 1: Наша неоновая статуя Аполлона (теперь на весь экран!) -->
+                    <div class="w-full h-full flex-shrink-0 relative">
+                        <img src="https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?auto=format&fit=crop&w=1600&q=80" 
+                             alt="Neon Classical Statue" 
+                             class="w-full h-full object-cover">
+                        <!-- Легкое затемнение для контраста -->
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <!-- Наша фирменная неоновая цензура сверху -->
+                        <div class="absolute top-[52%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] sm:w-[50%] md:w-[40%] h-8 sm:h-12 md:h-14 bg-gradient-to-r from-[#ff007f] via-[#b500ff] to-[#00f0ff] opacity-95 shadow-[0_0_40px_rgba(255,0,127,0.5)] z-20 mix-blend-screen"></div>
+                    </div>
+
+                    <!-- Слайд 2: Жидкие 3D неоновые волны (в тему нашего 3D) -->
+                    <div class="w-full h-full flex-shrink-0 relative">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80" 
+                             alt="Abstract Neon Fluid" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/30"></div>
+                        <!-- Текстовый акцент на слайде -->
+                        <div class="absolute bottom-10 left-8 md:left-12 z-20 text-white max-w-sm">
+                            <span class="text-xs font-bold uppercase tracking-widest text-[#00f0ff]">Exclusive Direction</span>
+                            <h4 class="text-2xl md:text-3xl font-extrabold mt-2">Next-Gen Visuals</h4>
+                        </div>
+                    </div>
+
+                    <!-- Слайд 3: Футуристичная геометрия (в тему UI/UX и графики) -->
+                    <div class="w-full h-full flex-shrink-0 relative">
+                        <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&w=1600&q=80" 
+                             alt="Futuristic Mesh Geometry" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <div class="absolute top-10 right-8 md:right-12 z-20 text-white text-right">
+                            <span class="text-xs font-bold uppercase tracking-widest text-[#ff007f]">Figma & Code</span>
+                            <h4 class="text-2xl md:text-3xl font-extrabold mt-2">Seamless Experience</h4>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Кнопка Влево (появляется при наведении на слайдер) -->
+                <button id="prev-slide" class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/20 bg-black/40 text-white flex items-center justify-center hover:bg-white hover:text-black hover:border-transparent transition-all duration-300 active:scale-95 opacity-0 group-hover:opacity-100" aria-label="Previous slide">
+                    <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                </button>
+
+                <!-- Кнопка Вправо -->
+                <button id="next-slide" class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/20 bg-black/40 text-white flex items-center justify-center hover:bg-white hover:text-black hover:border-transparent transition-all duration-300 active:scale-95 opacity-0 group-hover:opacity-100" aria-label="Next slide">
+                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                </button>
+
+                <!-- Точки навигации (Пагинация) -->
+                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex space-x-2.5">
+                    <button class="slider-dot w-2 h-2 rounded-full bg-white transition-all duration-300" aria-label="Go to slide 1"></button>
+                    <button class="slider-dot w-2 h-2 rounded-full bg-white/40 transition-all duration-300" aria-label="Go to slide 2"></button>
+                    <button class="slider-dot w-2 h-2 rounded-full bg-white/40 transition-all duration-300" aria-label="Go to slide 3"></button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mt-24 md:mt-36">
+            
+            <div class="mb-12 md:mb-16">
+                <p class="text-xs font-bold uppercase tracking-widest text-gray-400">Our Services</p>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-[#121212] mt-2">
+                    What we do best
+                </h2>
+            </div>
+
+            <div class="border-t border-gray-200">
+                
+                <div class="accordion-item border-b border-gray-200 py-6 md:py-8 cursor-pointer group">
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="flex items-center space-x-6 md:space-x-12">
+                            <span class="text-sm md:text-base font-bold text-gray-300 group-hover:text-[#121212] transition-colors duration-300">01</span>
+                            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#121212] tracking-tight">
+                                Web & Mobile UI/UX
+                            </h3>
+                        </div>
+                        <div class="accordion-icon w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:text-[#121212] group-hover:border-gray-400 transition-all duration-300">
+                            <i data-lucide="plus" class="w-5 h-5 transition-transform duration-500"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-6 pl-12 md:pl-20 max-w-2xl text-gray-500 font-light text-sm md:text-base leading-relaxed space-y-4">
+                            <p>
+                                We create high-converting websites, intuitive mobile apps, and complex CRM/SaaS dashboards in Figma. Every project is built on solid user research, wireframing, and rigorous interactive prototyping.
+                            </p>
+                            <ul class="flex flex-wrap gap-2 text-xs font-semibold text-[#121212] pt-2">
+                                <li class="bg-gray-100 px-3 py-1.5 rounded-full">User Research</li>
+                                <li class="bg-gray-100 px-3 py-1.5 rounded-full">Figma Prototyping</li>
+                                <li class="bg-gray-100 px-3 py-1.5 rounded-full">iOS/Android Layouts</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item border-b border-gray-200 py-6 md:py-8 cursor-pointer group">
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="flex items-center space-x-6 md:space-x-12">
+                            <span class="text-sm md:text-base font-bold text-gray-300 group-hover:text-[#121212] transition-colors duration-300">02</span>
+                            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#121212] tracking-tight">
+                                Brand Identity & Mascot Design
+                            </h3>
+                        </div>
+                        <div class="accordion-icon w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:text-[#121212] group-hover:border-gray-400 transition-all duration-300">
+                            <i data-lucide="plus" class="w-5 h-5 transition-transform duration-500"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-6 pl-12 md:pl-20 max-w-2xl text-gray-500 font-light text-sm md:text-base leading-relaxed space-y-4">
+                            <p>
+                                Complete identity packages that make your brand memorable. Logo development, cohesive color palettes, unique typography choices, and custom character/mascot illustrations (yes, including cute vector assets like our signature onigiri).
+                            </p>
+                            <ul class="flex flex-wrap gap-2 text-xs font-semibold text-[#121212] pt-2">
+                                <li class="bg-gray-100 px-3 py-1.5 rounded-full">Logo Design</li>
+                                <li class="bg-gray-100 px-3 py-1.5 rounded-full">Mascot Illustrations</li>
+                                <li class="bg-gray-100 px-3 py-1.5 rounded-full">Brand Guidelines</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item border-b border-gray-200 py-6 md:py-8 cursor-pointer group">
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="flex items-center space-x-6 md:space-x-12">
+                            <span class="text-sm md:text-base font-bold text-gray-300 group-hover:text-[#121212] transition-colors duration-300">03</span>
+                            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#121212] tracking-tight">
+                                3D Art & Motion Graphics
+                            </h3>
+                        </div>
+                        <div class="accordion-icon w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:text-[#121212] group-hover:border-gray-400 transition-all duration-300">
+                            <i data-lucide="plus" class="w-5 h-5 transition-transform duration-500"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-6 pl-12 md:pl-20 max-w-2xl text-gray-500 font-light text-sm md:text-base leading-relaxed space-y-4">
+                            <p>
+                                Creating immersive 3D graphics, sci-fi and robotic concept designs, abstract loops, and commercial video assets. We bridge standard 2D layouts with depth and high-fidelity volumetric rendering.
+                            </p>
+                            <ul class="flex flex-wrap gap-2 text-xs font-semibold text-[#121212] pt-2">
+                                <li class="bg-gray-100 px-3 py-1.5 rounded-full">Blender / Cinema 4D</li>
+                                <li class="bg-gray-100 px-3 py-1.5 rounded-full">Sci-Fi Asset Modeling</li>
+                                <li class="bg-gray-100 px-3 py-1.5 rounded-full">Looping Animations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-[#121212] text-white rounded-t-[40px] mt-32 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 pb-16 border-b border-white/10">
+                
+                <div class="max-w-md">
+                    <p class="text-xs font-bold uppercase tracking-widest text-gray-500">Have an idea?</p>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mt-3 leading-tight">
+                        Let's create something <span class="bg-gradient-to-r from-[#ff007f] to-[#00f0ff] bg-clip-text text-transparent">legendary</span> together.
+                    </h2>
+                </div>
+
+                <div class="flex flex-col justify-center">
+                    <p class="text-sm text-gray-400 mb-4">Subscribe to our newsletter or just say hi!</p>
+                    <form class="relative group max-w-md w-full" onsubmit="event.preventDefault(); alert('🚀 Успешно отправлено!');">
+                        <input type="email" required placeholder="Enter your email address" 
+                               class="w-full h-14 bg-white/5 border border-white/10 rounded-full px-6 pr-16 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-white focus:ring-2 focus:ring-white/20 transition-all duration-300">
+                        
+                        <button type="submit" class="absolute right-2 top-2 w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-gradient-to-r hover:from-[#ff007f] hover:to-[#00f0ff] hover:text-white transition-all duration-300 active:scale-95" aria-label="Submit email">
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 text-sm">
+                
+                <div class="col-span-2 md:col-span-1 space-y-4">
+                    <div class="flex items-center space-x-2 font-black text-xl tracking-tighter">
+                        <span class="bg-white text-black px-2 py-0.5 rounded-md">C</span>
+                        <span>THREE</span>
+                    </div>
+                    <p class="text-gray-500 text-xs leading-relaxed max-w-[200px]">
+                        Next-gen digital studio craft concepts into flawless code.
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <p class="text-xs font-bold uppercase tracking-wider text-gray-500">Explore</p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">About Studio</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <p class="text-xs font-bold uppercase tracking-wider text-gray-500">Contact</p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="mailto:hello@c3.studio" class="hover:text-white transition-colors">hello@c3.studio</a></li>
+                        <li><a href="tel:+123456789" class="hover:text-white transition-colors">+1 (234) 567-89</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+    <p class="text-xs font-bold uppercase tracking-wider text-gray-500">Follow Us</p>
+    <div class="flex space-x-3 pt-1">
+        
+        <a href="https://t.me/your_username" target="_blank" rel="noopener noreferrer" 
+           class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white hover:text-black transition-all duration-300" 
+           aria-label="Telegram">
+            <svg class="w-4 h-4 transition-transform duration-300 hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.665 3.717l-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701-.332 4.981c.488 0 .704-.224.977-.488l2.35-2.285 4.887 3.61c.9.497 1.548.241 1.772-.83l3.202-15.09c.328-1.315-.5-1.912-1.362-1.503z"/>
+            </svg>
+        </a>
+
+        <a href="https://instagram.com/your_username" target="_blank" rel="noopener noreferrer" 
+           class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white hover:text-black transition-all duration-300" 
+           aria-label="Instagram">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+
+        <a href="https://facebook.com/your_username" target="_blank" rel="noopener noreferrer" 
+           class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white hover:text-black transition-all duration-300" 
+           aria-label="Facebook">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+        </a>
+
+    </div>
+</div>
+
+            </div>
+
+            <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-600 font-medium">
+                <p>© 2026 C3 Studio. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-gray-400 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-400 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- Инициализация иконок -->
+    <script>
+        lucide.createIcons();
+    </script>
+    <!-- ЕДИНЫЙ ИСПРАВЛЕННЫЙ СКРИПТ (СЛАЙДЕР + АККОРДЕОН) -->
+    <script>
+        // 1. Сразу инициализируем иконки Lucide
+        lucide.createIcons();
+
+        // 2. Ждем полной загрузки структуры страницы, чтобы JS точно нашел все кнопки и слайды
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // ==========================================
+            // ЛОГИКА БЕСКОНЕЧНОГО СЛАЙДЕРА
+            // ==========================================
+            const track = document.getElementById('slider-track');
+            const prevBtn = document.getElementById('prev-slide');
+            const nextBtn = document.getElementById('next-slide');
+            const dots = document.querySelectorAll('.slider-dot');
+            
+            if (track && prevBtn && nextBtn) {
+                const originalSlides = Array.from(track.children);
+                const firstClone = originalSlides[0].cloneNode(true);
+                const lastClone = originalSlides[originalSlides.length - 1].cloneNode(true);
+                
+                track.appendChild(firstClone);
+                track.insertBefore(lastClone, originalSlides[0]);
+                
+                let currentIndex = 1;
+                const totalOriginalSlides = originalSlides.length;
+                let isTransitioning = false;
+                
+                track.style.transition = 'none';
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+                function updateDots(activeDotIndex) {
+                    dots.forEach((dot, index) => {
+                        if (index === activeDotIndex) {
+                            dot.classList.remove('bg-white/40');
+                            dot.classList.add('bg-white', 'w-5');
+                        } else {
+                            dot.classList.remove('bg-white', 'w-5');
+                            dot.classList.add('bg-white/40');
+                        }
+                    });
+                }
+
+                function moveSlide(direction) {
+                    if (isTransitioning) return;
+                    isTransitioning = true;
+                    
+                    track.style.transition = 'transform 700ms cubic-bezier(0.25, 1, 0.5, 1)';
+                    
+                    if (direction === 'next') {
+                        currentIndex++;
+                    } else {
+                        currentIndex--;
+                    }
+                    
+                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    
+                    let activeDot = currentIndex - 1;
+                    if (currentIndex === totalOriginalSlides + 1) {
+                        activeDot = 0;
+                    } else if (currentIndex === 0) {
+                        activeDot = totalOriginalSlides - 1;
+                    }
+                    updateDots(activeDot);
+                }
+
+                track.addEventListener('transitionend', () => {
+                    isTransitioning = false;
+                    
+                    if (currentIndex === totalOriginalSlides + 1) {
+                        track.style.transition = 'none';
+                        currentIndex = 1;
+                        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    } else if (currentIndex === 0) {
+                        track.style.transition = 'none';
+                        currentIndex = totalOriginalSlides;
+                        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    }
+                });
+
+                nextBtn.addEventListener('click', () => moveSlide('next'));
+                prevBtn.addEventListener('click', () => moveSlide('prev'));
+
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        if (isTransitioning) return;
+                        currentIndex = index + 1;
+                        track.style.transition = 'transform 700ms cubic-bezier(0.25, 1, 0.5, 1)';
+                        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                        updateDots(index);
+                    });
+                });
+
+                updateDots(0);
+            }
+
+            // ==========================================
+            // ЛОГИКА ИНТЕРАКТИВНОГО АККОРДЕОНА
+            // ==========================================
+            const accordionItems = document.querySelectorAll('.accordion-item');
+
+            accordionItems.forEach(item => {
+                // Нацеливаемся на саму круглую плашку кнопки — она не меняется Lucide
+                const iconWrapper = item.querySelector('.accordion-icon');
+                const content = item.querySelector('.accordion-content');
+
+                item.addEventListener('click', () => {
+                    const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+                    // Закрываем все остальные разделы
+                    accordionItems.forEach(otherItem => {
+                        const otherContent = otherItem.querySelector('.accordion-content');
+                        const otherIconWrapper = otherItem.querySelector('.accordion-icon');
+                        
+                        otherContent.style.maxHeight = '0px';
+                        if (otherIconWrapper) {
+                            otherIconWrapper.style.transform = 'rotate(0deg)';
+                        }
+                    });
+
+                    // Переключаем текущий
+                    if (!isOpen) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        if (iconWrapper) {
+                            iconWrapper.style.transform = 'rotate(45deg)';
+                        }
+                    } else {
+                        content.style.maxHeight = '0px';
+                        if (iconWrapper) {
+                            iconWrapper.style.transform = 'rotate(0deg)';
+                        }
+                    }
+                });
+            });
+
+        });
+    </script>
+    
+</body>
+</html>

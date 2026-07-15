@@ -1,0 +1,13 @@
+/* Подключение шрифта Plus Jakarta Sans */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+/* Глобальные стили */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Кастомный паттерн точек для видео-блока */
+.dots-pattern {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+}
