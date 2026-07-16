@@ -410,7 +410,7 @@
       
       <button type="submit" 
               class="w-full py-4 text-white font-bold rounded-lg transition-all transform active:scale-[0.98] shadow-lg shadow-purple-900/30"
-              style="background: linear-gradient(135deg, #5c2c7d 0%, #a11f67 100%);">
+              style="background: linear-gradient(135deg, #131313 0%, #292929 100%);">
         Send Request
       </button>
 
@@ -688,14 +688,14 @@
       const result = await response.json();
 
       if (response.ok && result.success) {
-        statusText.textContent = '🎉 Request sent! I will contact you soon.';
+        statusText.textContent = 'Request sent! We will contact you soon.';
         statusText.className = 'text-center text-sm font-semibold mt-4 text-green-400';
         form.reset();
       } else {
         throw new Error(result.message || 'Error sending request');
       }
     } catch (error) {
-      statusText.textContent = '❌ Failed to send. Please try again.';
+      statusText.textContent = 'Failed to send. Please try again.';
       statusText.className = 'text-center text-sm font-semibold mt-4 text-red-400';
     }
   });
