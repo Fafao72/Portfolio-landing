@@ -380,33 +380,38 @@
         </div>
 
     </main>
-    <section class="py-20 px-4 max-w-lg mx-auto text-white">
-  <div class="bg-zinc-900/80 backdrop-blur-md p-8 rounded-2xl border border-zinc-800 shadow-2xl">
-    <h2 class="text-3xl font-extrabold mb-2 text-center bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-      Оставить заявку
+    <!-- Минималистичная форма (Strict & English) как в image_8.png -->
+<section class="py-20 px-4 max-w-lg mx-auto text-white">
+  <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-xl shadow-2xl">
+    <h2 class="text-3xl font-extrabold mb-2 text-center text-white">
+      Request a Quote
     </h2>
-    <p class="text-zinc-400 text-sm text-center mb-6">Заполни форму, и бот моментально перешлет её мне в Telegram</p>
+    <p class="text-zinc-400 text-sm text-center mb-8">
+      Fill out the form, and the request will be instantly forwarded to my Telegram.
+    </p>
 
-    <form id="telegram-form" class="space-y-4">
+    <form id="telegram-form" class="space-y-6">
       <div>
-        <label class="block text-zinc-400 text-xs uppercase tracking-wider mb-2" for="name">Ваше имя</label>
-        <input type="text" id="name" required placeholder="Иван" 
-               class="w-full p-3 rounded-lg bg-zinc-800/50 border border-zinc-700 text-white placeholder-zinc-500 focus:outline-none focus:border-purple-500 transition-colors">
+        <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-2" for="name">YOUR NAME</label>
+        <input type="text" id="name" required placeholder="John Doe" 
+               class="w-full p-3.5 rounded-lg bg-zinc-800 border border-zinc-700 text-white placeholder-zinc-500 focus:outline-none focus:border-purple-600 transition-colors">
       </div>
       <div>
-        <label class="block text-zinc-400 text-xs uppercase tracking-wider mb-2" for="contact">Telegram или Телефон</label>
-        <input type="text" id="contact" required placeholder="@username или +7..." 
-               class="w-full p-3 rounded-lg bg-zinc-800/50 border border-zinc-700 text-white placeholder-zinc-500 focus:outline-none focus:border-purple-500 transition-colors">
+        <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-2" for="contact">TELEGRAM OR PHONE</label>
+        <input type="text" id="contact" required placeholder="@username or +1..." 
+               class="w-full p-3.5 rounded-lg bg-zinc-800 border border-zinc-700 text-white placeholder-zinc-500 focus:outline-none focus:border-purple-600 transition-colors">
       </div>
       <div>
-        <label class="block text-zinc-400 text-xs uppercase tracking-wider mb-2" for="message">Сообщение</label>
-        <textarea id="message" rows="3" placeholder="Расскажите о вашем проекте..." 
-                  class="w-full p-3 rounded-lg bg-zinc-800/50 border border-zinc-700 text-white placeholder-zinc-500 focus:outline-none focus:border-purple-500 transition-colors"></textarea>
+        <label class="block text-zinc-500 text-xs uppercase tracking-wider mb-2" for="message">MESSAGE</label>
+        <textarea id="message" rows="4" placeholder="Tell us about your project..." 
+                  class="w-full p-3.5 rounded-lg bg-zinc-800 border border-zinc-700 text-white placeholder-zinc-500 focus:outline-none focus:border-purple-600 transition-colors"></textarea>
       </div>
       
+      
       <button type="submit" 
-              class="w-full py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold rounded-lg transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-purple-500/20">
-        Отправить в космос 🚀
+              class="w-full py-4 text-white font-bold rounded-lg transition-all transform active:scale-[0.98] shadow-lg shadow-purple-900/30"
+              style="background: linear-gradient(135deg, #5c2c7d 0%, #a11f67 100%);">
+        Send Request
       </button>
 
       <p id="form-status" class="text-center text-sm font-semibold mt-4 hidden"></p>
@@ -427,7 +432,7 @@
 
                 <div class="flex flex-col justify-center">
                     <p class="text-sm text-gray-400 mb-4">Subscribe to our newsletter or just say hi!</p>
-                    <form class="relative group max-w-md w-full" onsubmit="event.preventDefault(); alert('🚀 Успешно отправлено!');">
+                    <form class="relative group max-w-md w-full" onsubmit="event.preventDefault(); alert('Sent successfully');">
                         <input type="email" required placeholder="Enter your email address" 
                                class="w-full h-14 bg-white/5 border border-white/10 rounded-full px-6 pr-16 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-white focus:ring-2 focus:ring-white/20 transition-all duration-300">
                         
@@ -661,17 +666,17 @@
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Сбрасываем статус перед отправкой
+    // Сброс статуса
     statusText.classList.remove('hidden', 'text-red-400', 'text-green-400');
-    statusText.classList.add('text-zinc-400');
-    statusText.textContent = 'Отправка заявки...';
+    statusText.classList.add('text-zinc-500');
+    statusText.textContent = 'Sending request...';
 
     const name = document.getElementById('name').value;
     const contact = document.getElementById('contact').value;
     const message = document.getElementById('message').value;
 
     try {
-      // Делаем безопасный запрос к нашей внутренней API Vercel
+      // Безопасный запрос к нашей серверной функции Vercel
       const response = await fetch('/api/send', {
         method: 'POST',
         headers: {
@@ -683,14 +688,14 @@
       const result = await response.json();
 
       if (response.ok && result.success) {
-        statusText.textContent = '🎉 Заявка улетела! Скоро свяжусь с вами.';
+        statusText.textContent = '🎉 Request sent! I will contact you soon.';
         statusText.className = 'text-center text-sm font-semibold mt-4 text-green-400';
         form.reset();
       } else {
-        throw new Error(result.message || 'Ошибка отправки');
+        throw new Error(result.message || 'Error sending request');
       }
     } catch (error) {
-      statusText.textContent = '❌ Не удалось отправить. Попробуйте еще раз.';
+      statusText.textContent = '❌ Failed to send. Please try again.';
       statusText.className = 'text-center text-sm font-semibold mt-4 text-red-400';
     }
   });
